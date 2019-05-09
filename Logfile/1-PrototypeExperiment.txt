@@ -1,0 +1,12 @@
+Block Name	Trial Number	Stimulus Type	Condition	Stimulus Duration	ISI Duration	Port Code	Filename	Response Button	Accuracy	RT
+Practice	1	Outside	Practice	302.8	1186	101	back_2.bmp		rm_miss	-6157.3
+Practice	2	Inside	Practice	302.8	1288	1	back_V2.bmp		rm_miss	-7651
+Practice	3	Inside	Practice	302.8	1175	1	back_V1.bmp		rm_miss	-9245.5
+Practice	4	Inside	Practice	302.8	1127	1	back_V2.bmp		rm_miss	-10719
+Practice	5	Inside	Practice	302.8	1214	1	back_V1.bmp		rm_miss	-12152.1
+Practice	6	Outside	Practice	302.8	1211	101	back_2.bmp		rm_miss	-13666
+Practice	7	Outside	Practice	302.8	1166	101	back_1.bmp		rm_miss	-15179.8
+Practice	8	Inside	Practice	302.8	1285	1	back_V1.bmp		rm_miss	-16653.3
+Practice	9	Inside	Practice	302.8	1260	1	back_V2.bmp		rm_miss	-18247.9
+Practice	10	Outside	Practice	302.8	1236	101	back_1.bmp		rm_miss	-19822.3
+

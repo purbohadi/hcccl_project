@@ -1,0 +1,223 @@
+
+# --- sub int_array_max ---
+
+# Returns the maximum value of values in an array
+
+sub
+	int int_array_max( array<int,1>& data )
+begin
+	if ( data.count() > 0 ) then
+		int max = data[1];
+		loop
+			int i = 2
+		until
+			i > data.count()
+		begin
+			if ( data[i] > max ) then
+				max = data[i];
+			end;
+			i = i + 1;
+		end;
+		return max
+	end;
+	return 0
+end;
+
+# --- sub int_array_min ---
+
+# Returns the minimum value of values in an array
+
+sub
+	int int_array_min( array<int,1>& data )
+begin
+	if ( data.count() > 0 ) then
+		int min = data[1];
+		loop
+			int i = 2
+		until
+			i > data.count()
+		begin
+			if ( data[i] < min ) then
+				min = data[i];
+			end;
+			i = i + 1;
+		end;
+		return min
+	end;
+	return 0
+end;
+
+# --- sub int_array_sum
+
+# Returns the sum of values in an array
+
+sub
+	int int_array_sum( array<int,1>& data )
+begin
+	int rval = 0;
+	loop
+		int i = 1
+	until 
+		i > data.count()
+	begin
+		rval = rval + data[i];
+		i = i + 1;
+	end;
+	return rval
+end;
+
+# --- sub string_array_find ---
+
+# Takes a string array and a string. If that string is in the array
+# returns the index, else returns 0
+
+sub
+	int string_array_find( array<string,1>& temp_arr, string str_to_find )
+begin
+	loop
+		int i = 1
+	until
+		i > temp_arr.count()
+	begin
+		if ( temp_arr[i] == str_to_find ) then
+			return i
+		end;
+		i = i + 1;
+	end;
+	return 0
+end;
+
+# --- sub get_characters ---
+
+# Fills an array with the individual characters from a string
+sub
+	get_characters( string str, array<string,1>& characters )
+begin
+	characters.resize( str.count() );
+	loop
+		int i = 1
+	until
+		i > str.count()
+	begin
+		characters[i] = str.substring( i, 1 );
+		i = i + 1
+	end
+end;
+
+# --- sub get_lang_item ---
+
+# This subroutine ensures that an empty caption/item in a language file 
+# does not end up causing a run-time error if trying to set a text caption
+# Takes a language file and an item name as arguments, returns the text from the item
+# or a space, if that item is empty or does not exist.
+sub
+	string get_lang_item( language_file lang_file, string item_name )
+begin
+	string temp = lang_file.get_text( item_name );
+	if ( temp.count() == 0 ) then 
+		temp = " ";
+	end;
+	return temp
+end;
+
+# --- sub load_language_file ---
+
+# Creates a language_file and loads it from a given file
+sub
+	language_file load_language_file( string filename )
+begin
+	if ( !file_exists( filename ) ) then
+		exit( "The language file '" + filename + "' does not exist." );
+	end;
+	language_file lang = new language_file;
+	lang.load( filename );
+	return lang
+end;
+
+# --- sub random_exclude ---
+
+# Returns a random integer within a range, excluding one value within that range
+# Takes a min value, max value, and excluded value as arguments
+
+sub 
+	int random_exclude( int first, int last, int exclude )
+begin
+	int rval = random( first, last - 1 );
+		if ( rval >= exclude ) then
+			rval = rval + 1;
+		end;
+	return rval
+end;
+
+# --- sub random_sign ---
+
+# This subroutine randomly returns an integer -1 or 1
+# Use to set a random sign on a value, i.e. for jitters around 0
+
+sub 
+	int random_sign
+begin
+	return random_exclude( -1, 1, 0 )
+end;
+
+# --- sub color_to_string
+
+# Takes an RGB color and returns the string representation of that color
+
+sub
+	string color_to_string( rgb_color color_to_convert )
+begin
+	string color_string = string( color_to_convert.red_byte() );
+	color_string.append( "," );
+	color_string.append( string( color_to_convert.green_byte() ) );
+	color_string.append( "," );
+	color_string.append( string( color_to_convert.blue_byte() ) );
+	return color_string
+end;
+
+# --- sub fix_empty_string
+
+# Fixes empty strings to contain only a space. Used so that passing a potentially
+# empty string to set a text caption does not cause a runtime error.
+
+sub
+	string fix_empty_string( string test_string )
+begin
+	if ( test_string.count() < 1 ) then
+		return " ";
+	end;
+	return test_string
+end;
+
+# --- sub make_random_pair
+
+# Generates a set of values that mimic being random samples
+# from a normal distribution with a given mean/SD
+# Can be used to generate "fake" normal distributions
+
+sub
+	array<double,1> make_random_dist( double mean, double sd, int num_samples )
+begin
+	array<double> dist[0];
+	
+	loop
+	until
+		dist.count() >= num_samples
+	begin
+		# First we need to get two random uniform samples in the range (0,1)
+		double U1 = random();
+		double U2 = random();
+
+		# Now some fancy math (Box-Muller Transform) to convert these values
+		# To be from a perfect normal distribution
+		double z0 = sqrt( -2.0 * log( U1 ) ) * ( cos( 2.0 * pi_value * U2 ) );
+		double z1 = sqrt( -2.0 * log( U1 ) ) * ( sin( 2.0 * pi_value * U2 ) );
+
+		# Now we use the mean and sd of our desired array to adjust the values
+		dist.add( ( sd * z0 ) + mean );
+		dist.add( ( sd * z1 ) + mean );
+	end;
+	dist.resize( num_samples );
+
+	return dist
+end;

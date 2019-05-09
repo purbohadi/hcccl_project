@@ -1,0 +1,53 @@
+Scenario - Prototype
+Logfile written - 05/09/2019 14:48:10
+
+Subject	Trial	Event Type	Code	event_name(str)	prac_type(str)	trial_number(num)	stim_type(str)	stim_cond(str)	ISI_duration(num)	p_code(num)	stim_file(str)	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur	Stim Type	Pair Index
+
+1	1	Response	202									17860	16448	12
+1	5	Picture	ISI	ISI								48443	0	1	13120	1	0	next	other	0
+1	6	Picture	Stimulus;Practice;1;Outside;Practice;1186;101;back_2.bmp	Stimulus	Practice	1	Outside	Practice	1186	101	back_2.bmp	61563	0	1	3028	1	0	next	miss	0
+1	7	Picture	ISI	ISI								64590	0	1	11909	1	0	next	other	0
+1	8	Picture	Stimulus;Practice;2;Inside;Practice;1288;1;back_V2.bmp	Stimulus	Practice	2	Inside	Practice	1288	1	back_V2.bmp	76500	0	1	3028	1	0	next	miss	0
+1	9	Picture	ISI	ISI								79527	0	1	12918	1	0	next	other	0
+1	10	Picture	Stimulus;Practice;3;Inside;Practice;1175;1;back_V1.bmp	Stimulus	Practice	3	Inside	Practice	1175	1	back_V1.bmp	92445	0	1	3028	1	0	next	miss	0
+1	11	Picture	ISI	ISI								95473	0	1	11707	1	0	next	other	0
+1	12	Picture	Stimulus;Practice;4;Inside;Practice;1127;1;back_V2.bmp	Stimulus	Practice	4	Inside	Practice	1127	1	back_V2.bmp	107180	0	1	3028	1	0	next	miss	0
+1	13	Picture	ISI	ISI								110208	0	1	11303	1	0	next	other	0
+1	14	Picture	Stimulus;Practice;5;Inside;Practice;1214;1;back_V1.bmp	Stimulus	Practice	5	Inside	Practice	1214	1	back_V1.bmp	121511	0	1	3028	1	0	next	miss	0
+1	15	Picture	ISI	ISI								124539	0	1	12111	1	0	next	other	0
+1	16	Picture	Stimulus;Practice;6;Outside;Practice;1211;101;back_2.bmp	Stimulus	Practice	6	Outside	Practice	1211	101	back_2.bmp	136650	0	1	3028	1	0	next	miss	0
+1	17	Picture	ISI	ISI								139677	0	1	12111	1	0	next	other	0
+1	18	Picture	Stimulus;Practice;7;Outside;Practice;1166;101;back_1.bmp	Stimulus	Practice	7	Outside	Practice	1166	101	back_1.bmp	151788	0	1	3028	1	0	next	miss	0
+1	19	Picture	ISI	ISI								154816	0	1	11707	1	0	next	other	0
+1	20	Picture	Stimulus;Practice;8;Inside;Practice;1285;1;back_V1.bmp	Stimulus	Practice	8	Inside	Practice	1285	1	back_V1.bmp	166523	0	1	3028	1	0	next	miss	0
+1	21	Picture	ISI	ISI								169551	0	1	12918	1	0	next	other	0
+1	22	Picture	Stimulus;Practice;9;Inside;Practice;1260;1;back_V2.bmp	Stimulus	Practice	9	Inside	Practice	1260	1	back_V2.bmp	182469	0	1	3028	1	0	next	miss	0
+1	23	Picture	ISI	ISI								185497	0	1	12716	1	0	next	other	0
+1	24	Picture	Stimulus;Practice;10;Outside;Practice;1236;101;back_1.bmp	Stimulus	Practice	10	Outside	Practice	1236	101	back_1.bmp	198213	0	1	3028	1	0	next	miss	0
+1	25	Picture	ISI	ISI								201241	0	1	12514	1	0	next	other	0
+1	26	Response	202									214093	338	0
+
+
+Event Type	Code	Type	Response	RT	RT Uncertainty	Time	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur
+
+Picture	ISI	other				48443	1	13120	1	0	next
+Picture	Stimulus;Practice;1;Outside;Practice;1186;101;back_2.bmp	miss				61563	1	3028	1	0	next
+Picture	ISI	other				64590	1	11909	1	0	next
+Picture	Stimulus;Practice;2;Inside;Practice;1288;1;back_V2.bmp	miss				76500	1	3028	1	0	next
+Picture	ISI	other				79527	1	12918	1	0	next
+Picture	Stimulus;Practice;3;Inside;Practice;1175;1;back_V1.bmp	miss				92445	1	3028	1	0	next
+Picture	ISI	other				95473	1	11707	1	0	next
+Picture	Stimulus;Practice;4;Inside;Practice;1127;1;back_V2.bmp	miss				107180	1	3028	1	0	next
+Picture	ISI	other				110208	1	11303	1	0	next
+Picture	Stimulus;Practice;5;Inside;Practice;1214;1;back_V1.bmp	miss				121511	1	3028	1	0	next
+Picture	ISI	other				124539	1	12111	1	0	next
+Picture	Stimulus;Practice;6;Outside;Practice;1211;101;back_2.bmp	miss				136650	1	3028	1	0	next
+Picture	ISI	other				139677	1	12111	1	0	next
+Picture	Stimulus;Practice;7;Outside;Practice;1166;101;back_1.bmp	miss				151788	1	3028	1	0	next
+Picture	ISI	other				154816	1	11707	1	0	next
+Picture	Stimulus;Practice;8;Inside;Practice;1285;1;back_V1.bmp	miss				166523	1	3028	1	0	next
+Picture	ISI	other				169551	1	12918	1	0	next
+Picture	Stimulus;Practice;9;Inside;Practice;1260;1;back_V2.bmp	miss				182469	1	3028	1	0	next
+Picture	ISI	other				185497	1	12716	1	0	next
+Picture	Stimulus;Practice;10;Outside;Practice;1236;101;back_1.bmp	miss				198213	1	3028	1	0	next
+Picture	ISI	other				201241	1	12514	1	0	next

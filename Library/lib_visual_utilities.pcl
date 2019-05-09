@@ -1,0 +1,93 @@
+include_once "lib_common_defaults.pcl";
+
+double used_screen_height = display_device.custom_height();
+double used_screen_width = display_device.custom_width();
+
+# --- sub pixel_width ---
+# --- Returns the width in pixels of a width given in custom units
+
+sub
+	double pixel_width( double object_custom_width )
+begin
+	double display_custom_width = used_screen_height * ( double( display_device.width() ) / double( display_device.height() ) );
+	double this_width = ( object_custom_width/display_custom_width ) * double( display_device.width() );
+	return this_width
+end;
+
+# --- sub pixel_height ---
+# --- Returns the height in pixels of a height given in custom units
+
+sub
+	double pixel_height( double object_custom_height )
+begin
+	double this_height = ( object_custom_height/used_screen_height ) * double( display_device.height() );
+	return this_height
+end;
+
+# --- sub refresh_fix ---
+
+int int_half_refresh_period = int( round( display_device.refresh_period() / 2.0, 0 ) );
+
+# adjusts a duration to account for the refresh period
+# (currently by subtracting half the refresh period)
+sub
+	int simple_refresh_fix( int duration )
+begin
+	int rval = duration - int_half_refresh_period;
+	if ( rval < 1 ) then
+		rval = 1;
+	end;
+	return rval
+end;
+
+# --- sub trial_refresh_fix --- 
+
+sub
+	trial_refresh_fix( trial this_trial, int this_duration )
+begin
+	this_duration = simple_refresh_fix( this_duration );
+	if ( this_duration < int( round( display_device.refresh_period(), 0 ) ) ) then
+		this_trial.set_duration( this_trial.STIMULI_LENGTH );
+	else
+		this_trial.set_duration( this_duration );
+	end;
+end;
+
+# --- sub adjust_used_screen_size ---
+
+# changes the value of used_screen_width to only use a reduced portion of the screen
+# with a constant aspect ratio
+sub
+	adjust_used_screen_size( bool use_entire_screen )
+begin
+	if !use_entire_screen then
+		if display_device.custom_width() > used_screen_height * reduced_screen_ratio then
+			used_screen_width = used_screen_height * reduced_screen_ratio
+		end
+	end
+end;
+
+
+# --- sub word_wrap ---
+
+# Word wraps the text object to the given width/height, starting at the given font size
+sub
+	word_wrap( string caption, double max_width, double max_height, double font_size, bool char_wrap, text text_part )
+begin
+	text_part.set_font_size( font_size );
+	text_part.set_caption( caption );
+	text_part.set_max_text_height( max_height );
+	text_part.set_max_text_width( max_width );
+	text_part.set_character_wrap_mode( char_wrap );
+	text_part.redraw();
+end;
+
+# --- sub full_size_word_wrap ---
+
+# Calls word_wrap, using a fixed percentage of the used screen size as the maximum size
+sub
+	full_size_word_wrap( string caption, double font_size, bool char_wrap, text text_part  )
+begin
+	word_wrap( caption, used_screen_width * text_fill_percentage, 
+		used_screen_height * text_fill_percentage, font_size, char_wrap, text_part )
+end;

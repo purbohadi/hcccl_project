@@ -1,0 +1,19 @@
+
+# This is the aspect ratio used when using a reduced portion of 
+# the available screen area
+double reduced_screen_ratio = 4.0 / 3.0;
+
+# This is the percentage of the used screen width and height used
+# by the full_size_word_wrap subroutine
+double text_fill_percentage = 0.9;
+
+# These values should be used for port_codes
+int default_port_code1 = 10;
+int default_port_code2 = 20;
+int default_port_code3 = 30;
+int default_port_code4 = 40;
+int default_port_code5 = 50;
+int default_port_code6 = 60;
+int default_port_code7 = 70;
+int default_port_code8 = 80;
+int special_port_code1 = 99;

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<experiment_text language="English">
+  <map name="default">
+    <item key="Instructions">In this task, you will be presented with an image of an inside or outside of a house pattern tiles. Your task is to respond whether the image is an inside or outside pattern.
+
+If the image is an inside, press [IN_BUTTON] with your dominant hand. 
+
+If the image is an outside, press [OUT_BUTTON] with your dominant hand. 
+
+Please respond as quickly and accurately as possible. 
+
+Press either button to begin when you are ready.</item>
+    <item key="Reminder Caption">Inside = press [IN_BUTTON] 
+Outside = press [OUT_BUTTON] 
+
+
+Press either button to continue</item>
+    <item key="Timed Rest Caption">Take a rest! The next set will begin soon.</item>
+    <item key="Untimed Rest Caption">Take a rest! 
+
+Press either button to move on to the next part.</item>
+    <item key="Practice Caption">You will start by doing a few trials for practice.</item>
+    <item key="Practice Complete Caption">Practice trials complete! 
+
+Please wait for instructions from the experimenter.</item>
+    <item key="Ready Caption">Ready</item>
+    <item key="Set Caption">Set</item>
+    <item key="Go Caption">Go</item>
+    <item key="Get Ready Caption">Get ready to begin!</item>
+    <item key="Completion Screen Caption">You have completed the experiment. Thank you for participating. Press [IN_BUTTON] or [OUT_BUTTON] to exit.</item>
+    <item key="Word Wrap Mode">Word</item>
+  </map>
+</experiment_text>
